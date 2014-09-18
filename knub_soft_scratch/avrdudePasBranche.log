@@ -1,1 +1,0 @@
-avrdude: ser_open(): can't open device "/dev/ttyACM0": No such file or directory

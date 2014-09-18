@@ -24,7 +24,13 @@ enum {
   ID_MAJ = 11,
   ID_BOOK = 12,
   ID_BUTTON = 13,
-  ID_VALID_BUTTON_IP = 14
+  ID_VALID_BUTTON_IP = 14,
+  ID_BACKUP = 15
+};
+
+enum {
+  BACKUP_REQUEST = 0x72,
+  BACKUP_VALUE = 0x73
 };
 
 
@@ -67,6 +73,7 @@ class MyFrame: public wxFrame
   void OnAbout(wxCommandEvent &event);
   void OnQuit(wxCommandEvent &event);
   void OnMaj(wxCommandEvent &event);
+  void OnBackup(wxCommandEvent &event);
   void OnButton(wxCommandEvent &event);
   void OnIdle(wxIdleEvent &event);
   
@@ -77,6 +84,7 @@ BEGIN_EVENT_TABLE(MyFrame, wxFrame)
  EVT_MENU(wxID_EXIT, MyFrame::OnQuit)
  EVT_MENU(wxID_ABOUT, MyFrame::OnAbout)
  EVT_MENU(ID_MAJ, MyFrame::OnMaj)
+ EVT_MENU(ID_BACKUP, MyFrame::OnBackup)
  EVT_BUTTON(ID_BUTTON, MyFrame::OnButton)
  EVT_IDLE(MyFrame::OnIdle)
 END_EVENT_TABLE()
