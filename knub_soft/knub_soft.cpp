@@ -3,7 +3,7 @@
 #include "serial.h"
 
 using namespace std;
-
+ 
 Serial port;
 /*************************************************************************\
 *                                                                         *
@@ -141,7 +141,14 @@ void MyFrame::OnMaj(wxCommandEvent &event){
     fichier << "PORT=";
     //    fichier << "/dev/ttyACM0" << endl;
     fichier << name.mb_str() << endl;
+    #ifdef LINUX || MACOSX
     fichier << "avrdude -c stk500v2 -p atmega2560 -P $PORT -b 115200 -D -U flash:w:knub_servo.cpp.hex 2> avrdude.log";
+#elif defined(WINDOWS)
+    fichier << "..\avr\bin\avrdude -CD:..\avr\etc\avrdude.conf -patmega2560 -cwiring -P$PORT -b115200 -D -Uflash:w:knub_servo.cpp.hex:i";
+    #else
+    cout << "ratéééé" << endl;
+#endif
+    
     /*  fichier.seekp(5, ios::beg);
 	fichier<<"ceci est un test";*/
     fichier.close();

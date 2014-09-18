@@ -1,14 +1,14 @@
 
 avrdude: AVR device initialized and ready to accept instructions
 
-Reading | ################################################## | 100% 0.03s
+Reading | ################################################## | 100% 0.04s
 
 avrdude: Device signature = 0x1e9801
 avrdude: reading input file "knub_servo.cpp.hex"
 avrdude: input file knub_servo.cpp.hex auto detected as Intel Hex
 avrdude: writing flash (38540 bytes):
 
-Writing | ################################################## | 100% 6.05s
+Writing | ################################################## | 100% 6.35s
 
 avrdude: 38540 bytes of flash written
 avrdude: verifying flash memory against knub_servo.cpp.hex:
@@ -17,7 +17,7 @@ avrdude: input file knub_servo.cpp.hex auto detected as Intel Hex
 avrdude: input file knub_servo.cpp.hex contains 38540 bytes
 avrdude: reading on-chip flash data:
 
-Reading | ################################################## | 100% 4.53s
+Reading | ################################################## | 100% 4.74s
 
 avrdude: verifying ...
 avrdude: 38540 bytes of flash verified
